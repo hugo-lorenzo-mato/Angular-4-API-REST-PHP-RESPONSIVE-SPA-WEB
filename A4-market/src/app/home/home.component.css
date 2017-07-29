@@ -1,0 +1,27 @@
+.jumbotron{
+  border-radius: 30px;
+}
+
+.jumbotron h2, .jumbotron p{
+  text-align: center;
+}
+
+.jumbotron li{
+  padding-bottom: 4px;
+}
+
+.jumbotron p{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-weight: bold;
+}
+
+.botonJumbo{
+  padding:15px;
+  margin-right: 50px;
+}
+
+.divBotones{
+  text-align: center;
+  margin-top: 30px;
+}

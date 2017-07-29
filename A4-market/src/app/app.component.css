@@ -1,0 +1,84 @@
+#content{
+  border: 1px solid #eee;
+  margin-top: 35px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0px 3px 6px #ccc;
+  padding: 0px;
+  overflow: hidden; /*Para que la esquina del header no sobresalga del radius*/
+}
+
+#header{
+  background: #1C3D78;
+  color:white;
+  padding: 35px;
+  text-align: center;
+  margin: 0px;
+  line-height: 50px;
+}
+
+#header h1{
+  line-height: 25px;
+  display: block;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+#nav{
+  padding: 0px;
+  margin: 0px;
+  height: auto;
+  background: peru;
+  height: 50px;
+}
+
+
+#nav ul{
+  list-style: none;
+  height: 50px;
+  padding-left: 20px;
+}
+
+#nav ul li{
+  float:left;
+  margin-right: 25px;
+  transition: all 500ms;
+}
+
+#nav ul li a{
+  line-height: 50px;
+  height: 50px;
+  text-decoration: none;
+  color: #1C3D78;
+  display: block;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: all 500ms;
+}
+
+#nav ul li a:hover{
+  color: peru;
+}
+
+.activo{
+  background-color: #1C3D78 !important;
+  color: white !important;
+  border-bottom: 5px solid #59AFD5;
+}
+
+#nav ul li:hover{
+  background-color: #1C3D78;
+  color: peru;
+}
+
+#main{
+  clear: both;
+  margin-top: 50px;
+}
+
+#footer{
+  margin-top: 50px;
+  padding-top: 15px;
+  border-top:1px solid #ccc;
+  color: grey;
+}

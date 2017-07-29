@@ -1,0 +1,18 @@
+<div class="col-lg-10 offset-lg-1">
+  <div class="jumbotron">
+    <h2>{{title}}</h2>
+    <p>La presente aplicación te permitirá gestionar tus productos a través de una serie de funcionalidades que resumo a continuación:</p>
+    <ul class="col-5 offset-2">
+      <li>Añadir tus propios productos de manera sencilla</li>
+      <li>Añadir una imagen destacada para cada producto</li>
+      <li>Ver el listado de todos los añadidos</li>
+      <li>Eliminarlos</li>
+      <li>Editar sus características</li>
+      <li>Todo ello a través de una API REST desarrollada en PHP</li>
+    </ul>
+    <div class="col-lg-6 offset-lg-3 divBotones">
+      <a [routerLink]="['/anadir-producto']"><button class="btn btn-primary botonJumbo"><a>Añadir Productos</a></button></a>
+      <a [routerLink]="['/listado-productos']"><button class="btn btn-success botonJumbo">Listado Productos</button></a>
+    </div>
+  </div>
+</div>

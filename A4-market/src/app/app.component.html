@@ -1,0 +1,20 @@
+<div id="content" class="col-lg-10 offset-lg-1">
+  <header id="header" [style.background]='color_background'>
+    <h1>{{title}}</h1>
+  </header>
+  <!--col de 12 porque quiero que ocupe el 100% del div que lo abarca-->
+  <nav id="nav" class="col-lg-12">
+    <ul>
+      <li><a [routerLink]="['inicio']" [routerLinkActive] ="['activo']">Inicio</a></li>
+      <li><a [routerLink]="['listado-productos']" [routerLinkActive] ="['activo']" >Productos</a></li>
+      <li><a [routerLink]="['anadir-producto']" [routerLinkActive] ="['activo']" >Crear Producto</a></li>
+    </ul>
+  </nav>
+  <section id="main" class="col-lg-12">
+    <!-- Componente principal: Router Outlet -->
+    <router-outlet></router-outlet>
+  </section>
+  <footer id="footer" class="col-lg-12">
+    <p>&copy; 2017 Hugo Lorenzo Mato</p>
+  </footer>
+</div>

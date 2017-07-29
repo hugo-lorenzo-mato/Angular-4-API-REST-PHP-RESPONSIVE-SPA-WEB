@@ -1,0 +1,16 @@
+#formularioProducto label{
+  margin-top: 30px;
+}
+
+.botonAnadir{
+  margin-top: 35px;
+}
+
+
+.alert {
+  margin-bottom: 1px;
+  margin-left: 10px;
+  height: 30px;
+  line-height:30px;
+  padding:0px 15px;
+}
