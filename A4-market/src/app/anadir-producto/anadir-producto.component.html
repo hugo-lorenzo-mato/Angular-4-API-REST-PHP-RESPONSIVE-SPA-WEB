@@ -13,24 +13,33 @@
   <label>
     <strong>Descripcion:</strong>
     <span *ngIf="!descripcion.valid && descripcion.touched" class="alert alert-danger">La <strong>descripcion</strong> es obligatoria.</span>
-  </label> <textarea #descripcion="ngModel" name="descripcion" [(ngModel)]="producto.descripcion" class="form-control"
-    required></textarea>
+  </label><textarea #descripcion="ngModel" name="descripcion" [(ngModel)]="producto.descripcion" class="form-control" required></textarea>
 
 
 
   <label>
     <strong>Precio € :</strong>
     <span *ngIf="!precio.valid && precio.touched" class="alert alert-danger">El <strong>precio</strong> es obligatorio y sólo admite números.</span>
-  </label> <input type="text" #precio="ngModel" name="precio" [(ngModel)]="producto.precio" class="form-control" required pattern="[0-9]+"
-  />
+  </label> <input type="text" #precio="ngModel" name="precio" [(ngModel)]="producto.precio" class="form-control" required
+    pattern="[0-9]+" />
 
 
   <label>
     <strong>Imagen:</strong>
+    <div *ngIf="is_edit">
+      <div *ngIf="!producto.imagen">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYHn3XvIyw1gR6guKxR_7n9WmDYBaweQGxysDGJ23xyNKiayXVr4CHhIPc" width="60"/>
+      </div>
+      <div *ngIf="producto.imagen">
+	    	<img src="http://localhost/rest/uploads/{{producto.imagen}}" width="60"/>
+      </div>
+	  </div>
     <span *ngIf="!imagen.valid && imagen.touched" class="alert alert-danger">La <strong>imagen</strong> es obligatoria</span>
-  </label> <input type="file" #imagen="ngModel" name="imagen" [(ngModel)]="producto.imagen" class="form-control" (change)="fileChangeEvent($event)" />
+  </label> <input type="file" #imagen="ngModel" name="imagen" [(ngModel)]="producto.imagen" class="form-control" (change)="fileChangeEvent($event)"
+  />
 
 
-  <input type="submit" value="Añadir producto" class="col-lg-4 offset-8 btn btn-success botonAnadir" [disabled]="!formProducto.form.valid" />
+  <input type="submit" value="Añadir producto" class="col-lg-4 offset-8 btn btn-success botonAnadir" [disabled]="!formProducto.form.valid"
+  />
 
 </form>

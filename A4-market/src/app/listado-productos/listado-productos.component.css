@@ -1,0 +1,36 @@
+.tituloProducto{
+    margin-top: 20px;
+}
+
+.tituloProducto h4{
+  text-align: center;
+}
+
+
+
+.card{
+  overflow: hidden;
+}
+
+.card-block{
+  word-wrap: none;
+}
+
+img{
+  max-height: 200px;
+}
+
+
+
+.descripcionProducto{
+  text-overflow: ellipsis;
+}
+
+
+.botones{
+  margin-bottom: 0px;
+}
+
+.sinBoton{
+  color:white;
+}

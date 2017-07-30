@@ -10,13 +10,17 @@ import { Error404Component } from './error404/error404.component';
 import { ListadoProductosComponent } from './listado-productos/listado-productos.component';
 
 import { ProductosService } from './productos.service';
-import { AnadirProductoComponent } from './anadir-producto/anadir-producto.component'
+import { AnadirProductoComponent } from './anadir-producto/anadir-producto.component';
+import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component';
+import { EditarProductoComponent } from './editar-producto/editar-producto.component'
 
 const rutasApp: Routes = [
   {path: '' , component: HomeComponent , pathMatch:'full' },
   {path: 'inicio' , component: HomeComponent , pathMatch:'full' },
   {path: 'listado-productos' , component: ListadoProductosComponent },
   {path: 'anadir-producto' , component: AnadirProductoComponent },
+  {path: 'producto/:id' , component: DetalleProductoComponent },
+  {path: 'editar-producto/:id' , component: EditarProductoComponent },
   {path: '404' , component: Error404Component },
   {path: '**' , redirectTo: '404'}, /* funciona como comodín; ha de ser la última siempre */
 
@@ -29,7 +33,9 @@ const rutasApp: Routes = [
     HomeComponent,
     Error404Component,
     ListadoProductosComponent,
-    AnadirProductoComponent
+    AnadirProductoComponent,
+    DetalleProductoComponent,
+    EditarProductoComponent
   ],
   imports: [
     BrowserModule,

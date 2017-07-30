@@ -4,12 +4,42 @@
   <p>Cargando productos...</p>
 </div>
 <div *ngIf="productos">
-  <ul>
-    <li *ngFor="let producto of productos">
-      <strong>{{producto.nombre}} </strong>
-      <p>{{producto.precio}} €</p>
-      <p>{{producto.imagen}}</p>
-    </li>
+  <div class="row">
+    <div class="col col-lg-3" *ngFor="let producto of productos">
+      <div class="card">
+        <div class="card-title tituloProducto">
+          <h4>{{producto.nombre}}</h4>
+        </div>
+        <div class="card-img-top img-fluid mx-auto">
+          <div *ngIf="!producto.imagen">
+            <a [routerLink]="['/producto', producto.id]">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYHn3XvIyw1gR6guKxR_7n9WmDYBaweQGxysDGJ23xyNKiayXVr4CHhIPc"
+            />
+            </a>
+          </div>
+          <div *ngIf="producto.imagen">
+            <!--<img src="https://cdn-pro.elsalvador.com/wp-content/uploads/2017/01/30182002/1476896384419.jpg"/>-->
+            <a [routerLink]="['/producto', producto.id]">
+            <img src="http://localhost/rest/uploads/{{producto.imagen}}" />
+            </a>
+          </div>
+        </div>
+        <div class="card-block">
+          <h6 class="card-subtitle mb-2 text-muted">Precio: {{producto.precio}} €</h6>
+          <p class="card-text descripcionProducto">{{producto.descripcion}}</p>
+          <p class="botones col col-12 offset-1 sinBoton" *ngIf="confirmado!=producto.id">
+            <a class="btn btn-sm btn-danger col col-3" (click)="borrarConfirm(producto.id)">Eliminar</a>
+            <a [routerLink]="['/editar-producto', producto.id]" class="btn btn-sm btn-warning col col-3">Editar</a>
+            <a [routerLink]="['/producto', producto.id]" class="btn btn-sm btn-success col col-3">ver</a>
+          </p>
 
-  </ul>
-</div>
+					<div class="sinBoton" *ngIf="confirmado == producto.id">
+						<a (click)="onDeleteProducto(producto.id)" class="btn btn-sm btn-danger col col-6 offset-1">
+							Confirmar borrado
+						</a>
+						<a (click)="cancelarConfirm()" class="btn btn-sm btn-warning col col-4">Cancelar</a>
+					</div>
+        </div>
+      </div>
+    </div>
+  </div>

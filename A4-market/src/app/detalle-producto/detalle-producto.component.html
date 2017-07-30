@@ -1,0 +1,26 @@
+<h1>Detalle Producto:</h1>
+<div *ngIf="!producto">
+  <p>Cargando producto...</p>
+</div>
+<div class="row" *ngIf="producto">
+  <div class="col-lg-2  offset-1" *ngIf="producto.imagen">
+    <br>
+    <div *ngIf="!producto.imagen">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYHn3XvIyw1gR6guKxR_7n9WmDYBaweQGxysDGJ23xyNKiayXVr4CHhIPc"
+      />
+    </div>
+    <div *ngIf="producto.imagen">
+      <img src="http://localhost/rest/uploads/{{producto.imagen}}" />
+    </div>
+  </div>
+  <div class="col-lg-9">
+    <h3>{{producto.nombre}}</h3>
+    <p><strong>{{producto.precio}} €</strong></p>
+    <p>{{producto.descripcion}}</p>
+  </div>
+  <p class="col col-8 offset-4">
+    <a href="#" class="btn btn-md btn-danger col col-3">Eliminar</a>
+    <a [routerLink]="['/editar-producto', producto.id]" class="btn btn-md btn-warning col col-3">Editar</a>
+    <a [routerLink]="['/producto', producto.id]" class="btn btn-md btn-success col col-3">ver</a>
+  </p>
+</div>
