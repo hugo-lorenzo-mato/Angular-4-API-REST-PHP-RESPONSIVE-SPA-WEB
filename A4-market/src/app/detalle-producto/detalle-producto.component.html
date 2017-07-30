@@ -19,8 +19,7 @@
     <p>{{producto.descripcion}}</p>
   </div>
   <p class="col col-8 offset-4">
-    <a href="#" class="btn btn-md btn-danger col col-3">Eliminar</a>
     <a [routerLink]="['/editar-producto', producto.id]" class="btn btn-md btn-warning col col-3">Editar</a>
-    <a [routerLink]="['/producto', producto.id]" class="btn btn-md btn-success col col-3">ver</a>
+    <a [routerLink]="['/listado-productos']" class="btn btn-md btn-success col col-3">Ver productos</a>
   </p>
 </div>
